@@ -7,3 +7,7 @@
 5. tdz [tdz](./Supports/chap-TDZ.md)
 6. Array [array](./Supports/chap-Arrays.md)
 7. HOF [hot](./Supports/chap-HOF.md)
+
+## Installation de vite 
+
+1. vite [vite.js](./Supports/chap-installe-vite-node.md)
