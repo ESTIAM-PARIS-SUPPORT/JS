@@ -1,169 +1,107 @@
 # **Cours sur le DOM en JavaScript**
 
-## **1. Introduction au DOM**
-Le **DOM** (*Document Object Model*) est une interface de programmation qui permet aux scripts, comme JavaScript, d'interagir avec les pages web. Il représente la structure du document sous forme d'un arbre hiérarchique, où chaque élément HTML est un **nœud**.
+Nous utiliserons largement la documentation de `developer.mozilla.org`
 
-### **Définition du DOM**
-Le DOM est une représentation **objet** d'un document HTML ou XML. Il permet à JavaScript de manipuler dynamiquement le contenu, la structure et le style d'une page web.
+JavaScript a été créé en 1995 par Brendan Eich chez Netscape sous le nom de Mocha, puis renommé en LiveScript, avant d'adopter son nom actuel. Depuis, il a évolué avec de nombreuses versions marquantes.
 
-### **L'arborescence du DOM**
-Lorsqu'un navigateur charge une page web, il transforme le code HTML en une **arborescence** de nœuds, où :
-- **L'élément racine** est `document` (qui représente la page entière).
-- **Les éléments HTML** sont organisés en une structure imbriquée.
-- **Les attributs** et **les textes** sont aussi des nœuds.
+- 1995	JavaScript 1.0	Création du langage chez Netscape.
+- 1997	ECMAScript 1 (ES1)	Standardisation sous ECMA-262.
+- 2009	ECMAScript 5 (ES5)	Mode strict, JSON natif, nouvelles méthodes sur Array/Object.
+- 2015	ECMAScript 6 (ES6)	Introduction de let/const, des classes, des promesses, des modules (import/export), et du arrow function (=>).
+- 2016-2024	ES7+	Ajout d'async/await, Object.entries(), Optional Chaining (?.), Nullish Coalescing (??), et bien d'autres améliorations.
 
-Exemple d'un document HTML :
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Exemple DOM</title>
-</head>
-<body>
-    <h1 id="titre">Bienvenue</h1>
-    <p class="description">Ceci est un paragraphe.</p>
-</body>
-</html>
-```
-L'arborescence DOM correspondante :
-```
-document
- └── html
-     ├── head
-     │   ├── title
-     │   │   └── "Exemple DOM"
-     ├── body
-         ├── h1 (id="titre")
-         │   └── "Bienvenue"
-         ├── p (class="description")
-             └── "Ceci est un paragraphe."
-```
+On le trouve dans le développement Frontend et Backend.
 
-## **2. L'objet `document`**
-L'objet `document` est le point d'entrée principal pour manipuler le DOM. Il permet d'accéder aux éléments, de modifier leur contenu et d'écouter des événements.
+💡 Aujourd'hui, JavaScript est un langage incontournable du développement web, et son écosystème continue d'évoluer chaque année !
 
-### **Quelques propriétés utiles de `document`**
-- `document.title` → Modifie ou récupère le titre de la page.
-- `document.body` → Accède au corps (`<body>`) de la page.
-- `document.documentElement` → Représente l'élément racine (`<html>`).
-- `document.URL` → Récupère l'URL actuelle.
+Le site **[developer.mozilla.org](https://developer.mozilla.org/fr/)** (MDN) est une ressource en ligne de référence pour les développeurs web. Il est géré par **Mozilla**, l'organisation derrière le navigateur Firefox. Ce site est l'une des meilleures sources d'information pour tout ce qui concerne le développement web, incluant des langages comme **HTML**, **CSS**, **JavaScript**, ainsi que des technologies plus avancées comme **Web APIs**, **WebAssembly**, et bien plus.
 
-Exemple :
+---
+
+# **Introduction à la manipulation du DOM en JavaScript**  
+
+Le **DOM (Document Object Model)** représente la structure d'une page HTML sous forme d'un arbre d'éléments. Grâce à JavaScript, il est possible d’accéder, de modifier et d’interagir dynamiquement avec ces éléments via l’objet `document`.  
+
+![dom](./images/DOM.png)
+
+## **Sélectionner un élément dans la page**  
+
+JavaScript propose plusieurs méthodes pour cibler un élément spécifique :  
+
 ```js
-console.log(document.title);  // Affiche "Exemple DOM"
-document.title = "Nouveau Titre"; // Modifie le titre
+document.body; // Accède à l'élément <body> du document
+document.getElementById('root'); // Récupère l'élément qui a l'ID "root"
+document.querySelector('.main'); // Sélectionne le premier élément correspondant au sélecteur CSS
 ```
 
-## **3. Sélection d'éléments dans le DOM**
-### **Méthodes de sélection**
-JavaScript permet de récupérer des éléments HTML avec différentes méthodes :
+## **Sélectionner plusieurs éléments**  
 
-| Méthode                        | Description |
-|---------------------------------|------------|
-| `document.getElementById(id)`   | Sélectionne un élément par son `id`. |
-| `document.getElementsByClassName(class)` | Sélectionne plusieurs éléments avec une classe. |
-| `document.getElementsByTagName(tag)` | Sélectionne plusieurs éléments par leur balise (`h1`, `p`, etc.). |
-| `document.querySelector(cssSelector)` | Sélectionne **le premier** élément correspondant au sélecteur CSS. |
-| `document.querySelectorAll(cssSelector)` | Sélectionne **tous** les éléments correspondant au sélecteur CSS. |
+Si vous souhaitez récupérer plusieurs éléments en une seule fois :  
 
-Exemple :
 ```js
-let titre = document.getElementById("titre");
-console.log(titre.innerText); // "Bienvenue"
+const elements = document.querySelectorAll('.content'); // Sélectionne tous les éléments avec la classe "exemple"
 
-let paragraphe = document.querySelector(".description");
-console.log(paragraphe.innerText); // "Ceci est un paragraphe."
-```
-
-## **4. Modification du DOM**
-### **Modifier le contenu d'un élément**
-- `element.innerText` → Modifie le texte d'un élément.
-- `element.innerHTML` → Modifie le contenu HTML.
-
-Exemple :
-```js
-let titre = document.getElementById("titre");
-titre.innerText = "Bienvenue sur mon site"; // Change le texte du h1
-
-let paragraphe = document.querySelector(".description");
-paragraphe.innerHTML = "<strong>Texte en gras</strong>"; // Ajoute du HTML
-```
-
-### **Modifier les styles CSS**
-- `element.style.property` → Modifie une propriété CSS.
-
-Exemple :
-```js
-titre.style.color = "blue"; // Change la couleur du titre
-titre.style.fontSize = "24px"; // Modifie la taille du texte
-```
-
-## **5. Création et suppression d'éléments**
-### **Créer un élément et l'ajouter au DOM**
-- `document.createElement(tagName)` → Crée un nouvel élément HTML.
-- `parent.appendChild(child)` → Ajoute un élément enfant.
-
-Exemple :
-```js
-let nouveauParagraphe = document.createElement("p");
-nouveauParagraphe.innerText = "Paragraphe ajouté dynamiquement";
-document.body.appendChild(nouveauParagraphe);
-```
-
-### **Supprimer un élément**
-- `element.remove()` → Supprime un élément du DOM.
-
-Exemple :
-```js
-nouveauParagraphe.remove(); // Supprime le paragraphe ajouté
-```
-
-## **6. Gestion des événements**
-### **Ajouter un événement à un élément**
-- `element.addEventListener(event, function)` → Attache un événement.
-
-Exemple :
-```js
-let bouton = document.createElement("button");
-bouton.innerText = "Cliquez-moi";
-document.body.appendChild(bouton);
-
-bouton.addEventListener("click", function() {
-    alert("Bouton cliqué !");
+// Parcourir la liste des éléments sélectionnés
+elements.forEach(item => {
+    console.log(item); // Affiche chaque élément dans la console
 });
+
+// Convertir la liste en un tableau standard
+const elementsArray = Array.from(elements);
 ```
 
-### **Quelques événements courants**
-| Événement     | Description |
-|--------------|------------|
-| `click`      | Clic sur un élément. |
-| `mouseover`  | Passage de la souris sur un élément. |
-| `mouseout`   | Sortie de la souris d'un élément. |
-| `keydown`    | Appui sur une touche du clavier. |
-| `submit`     | Soumission d'un formulaire. |
+## **Obtenir des informations sur un élément**  
 
-## **7. Exemple d'interaction dynamique**
-Voici un petit script qui change le texte d'un paragraphe lorsqu'on clique sur un bouton :
+Une fois un élément sélectionné, voici quelques méthodes pour récupérer ses informations :  
 
-### **HTML :**
-```html
-<button id="changeText">Changer le texte</button>
-<p id="text">Texte d'origine</p>
-```
-
-### **JavaScript :**
 ```js
-let bouton = document.getElementById("changeText");
-let texte = document.getElementById("text");
-
-bouton.addEventListener("click", function() {
-    texte.innerText = "Texte modifié !";
-});
+element.getAttribute('src'); // Récupère la valeur d’un attribut
+element.style; // Accède aux styles appliqués à l'élément
+element.classList; // Liste les classes CSS attribuées à l'élément
+element.innerHTML; // Récupère le code HTML interne
+element.innerText; // Renvoie le texte affiché visuellement
+element.textContent; // Retourne tout le texte contenu, même caché
 ```
 
-## **8. Conclusion**
-Le DOM est une interface essentielle pour manipuler les pages web en JavaScript. Grâce à lui, on peut :
-- Accéder aux éléments HTML.
-- Modifier leur contenu et leurs styles.
-- Ajouter ou supprimer des éléments.
-- Gérer des événements utilisateurs.
+## **Modifier un élément**  
+
+Il est possible d'altérer le contenu, les styles ou les attributs d’un élément :  
+
+```js
+element.setAttribute('alt', 'Nouvelle description'); // Change la valeur d’un attribut
+element.style.color = 'blue'; // Modifie la couleur du texte
+element.classList.add('nouvelle-classe'); // Ajoute une classe CSS
+element.innerHTML = '<strong>Texte modifié</strong>'; // Modifie le contenu HTML
+element.innerText = 'Nouveau texte'; // Change uniquement le texte visible
+```
+
+## **Se déplacer dans l’arborescence du DOM**  
+
+Le DOM étant une hiérarchie d’éléments imbriqués, on peut naviguer entre eux :  
+
+```js
+element.childNodes; // Récupère tous les enfants, y compris les espaces et textes
+element.children; // Récupère uniquement les éléments enfants
+element.firstChild; // Renvoie le premier nœud enfant (peut être un texte)
+element.firstElementChild; // Récupère le premier élément enfant
+element.previousElementSibling; // Récupère l’élément précédent
+element.nextElementSibling; // Récupère l’élément suivant
+```
+
+## **Modifier la structure de la page**  
+
+JavaScript permet d’ajouter ou de supprimer dynamiquement des éléments :  
+
+```js
+element.appendChild(nouveauElement); // Ajoute un élément en tant qu'enfant
+element.append(nouveauElement); // Insère un élément (HTML ou texte)
+element.remove(); // Supprime l’élément du DOM
+parent.insertBefore(nouveauElement, referenceElement); // Ajoute un élément avant un autre
+parent.insertAdjacentHTML('beforebegin', '<p>Texte avant</p>'); // Insère du HTML à une position spécifique
+```
+
+---
+
+### **Conclusion**  
+
+Le DOM offre de nombreuses possibilités pour interagir avec une page web. Ces méthodes ne sont qu'un aperçu des manipulations possibles. Pour plus d'informations, consultez la documentation officielle sur [MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model).
