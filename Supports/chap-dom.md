@@ -86,8 +86,6 @@ Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récu
         // 1. affichez les valeurs
         // dans querySelector ou querySelectorAll utilisez les classes ou les selecteurs CSS
         const els = document.querySelectorAll('ul>li')
-
-        els.fore
     </script>
 </body>
 </html>
@@ -97,9 +95,9 @@ Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récu
 
 Dans un autre fichier `exercice-afficher.html`
 
-1. Affichez le texte dans la page suivante.
-2. Mettre ce texte dans la console en majuscule (`toUpperCase`)
-3. Essayez de l'afficher dans la page
+1. Affichez le texte dans la console (navigateur `console.log`).
+2. Mettre ce texte dans la console en majuscule (`toUpperCase`).
+3. Essayez de l'afficher dans la page ( utilisez la méthode `innerHTML`).
 
 ```html
 <!DOCTYPE html>
