@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Web</title>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <li>100</li>
+            <li>250</li>
+            <li>500</li>
+        </ul>
+        <div id="total"></div>
+    </div>
+    <script>
+        //console.log(document)
+        // 1. affichez les valeurs
+        // dans querySelector ou querySelectorAll utilisez les classes ou les selecteurs CSS
+        const els = document.querySelectorAll('ul>li');
+
+        els.forEach(el => {
+            console.log(el.innerHTML)
+        });
+
+        // 2. Faire la somme des valeurs
+        let s = 0
+        els.forEach(el => {
+           s += parseFloat(el.innerHTML);
+        });
+        console.log(s);
+
+        const total = document.getElementById('total');
+        total.innerHTML = s;
+    </script>
+</body>
+</html>
