@@ -148,6 +148,7 @@ element.innerText = 'Nouveau texte'; // Change uniquement le texte visible
 Le DOM étant une hiérarchie d’éléments imbriqués, on peut naviguer entre eux :  
 
 ```js
+
 element.childNodes; // Récupère tous les enfants, y compris les espaces et textes
 element.children; // Récupère uniquement les éléments enfants
 element.firstChild; // Renvoie le premier nœud enfant (peut être un texte)
@@ -161,12 +162,17 @@ element.nextElementSibling; // Récupère l’élément suivant
 JavaScript permet d’ajouter ou de supprimer dynamiquement des éléments :  
 
 ```js
+const nouveauElement = document.createElement('p'); // crée un paragraphe ( pas monté dans le DOM encore ...)
 element.appendChild(nouveauElement); // Ajoute un élément en tant qu'enfant
 element.append(nouveauElement); // Insère un élément (HTML ou texte)
 element.remove(); // Supprime l’élément du DOM
 parent.insertBefore(nouveauElement, referenceElement); // Ajoute un élément avant un autre
 parent.insertAdjacentHTML('beforebegin', '<p>Texte avant</p>'); // Insère du HTML à une position spécifique
 ```
+
+## Exercice
+
+Créez une page HTML avec un `div.main` et ajoutez un paragraphe avec du texte en rose (définissez ce style avec du JavaScript).
 
 ---
 
