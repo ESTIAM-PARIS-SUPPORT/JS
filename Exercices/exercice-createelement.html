@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const rootElement = document.getElementById('root');
+        const p = document.createElement('p');
+        // console.log(p)
+        p.innerText = "Bonjour tout le monde !";
+        p.style.color = 'pink';
+        rootElement.appendChild(p);
+
+        // challenge - du prof 
+        for (let i = 0; i <9; i++) {
+             const newP = document.createElement('p');
+             newP.innerText = 'bonjour - ' + (i+1);
+             newP.style.color = (i % 2 == 0) ? 'green' : 'red' ;
+             rootElement.appendChild(newP);
+        }
+    </script>
+</body>
+</html>
