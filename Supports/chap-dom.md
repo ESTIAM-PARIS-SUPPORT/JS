@@ -168,6 +168,10 @@ parent.insertBefore(nouveauElement, referenceElement); // Ajoute un élément av
 parent.insertAdjacentHTML('beforebegin', '<p>Texte avant</p>'); // Insère du HTML à une position spécifique
 ```
 
+## Exercice
+
+Créez une page HTML avec un `div.main` et ajoutez un paragraphe avec du texte en rose (définissez ce style avec du JavaScript).
+
 ---
 
 ### **Conclusion**  
