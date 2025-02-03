@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Web</title>
+</head>
+<body>
+    <div id="root">
+        <h1 class="titre">hello world 1</h1>
+    </div>
+    <div id="main">
+        <h1 class="titre">hello world 2</h1>
+    </div>
+
+    <div class="new-title"></div>
+    <script>
+        // sélectionne un élément dans le DOM
+        // le premier trouver dans le DOM avec querySelector
+        // const el = document.querySelector('div > h1');
+
+        // on utilise la classe avec querySelector
+        const el = document.querySelector('.titre');
+        console.log(el.innerHTML);
+        console.log(el.innerHTML.toUpperCase())
+        // mettre le titre en majuscule
+        const elNewTtitle = document.querySelector('.new-title');
+        elNewTtitle.innerHTML = '<h1>' + el.innerHTML.toUpperCase() + '</h1>'
+        // ajoute du texte donc n'interprète pas le HTML 
+        // elNewTtitle.innerText = '<h1>' + el.innerHTML.toUpperCase() + '</h1>'
+    </script>
+</body>
+</html>
