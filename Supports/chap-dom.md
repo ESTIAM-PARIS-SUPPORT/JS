@@ -82,7 +82,39 @@ Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récu
         </ul>
     </div>
     <script>
-        console.log(document)
+        //console.log(document)
+        // 1. affichez les valeurs
+        // dans querySelector ou querySelectorAll utilisez les classes ou les selecteurs CSS
+        const els = document.querySelectorAll('ul>li')
+
+        els.fore
+    </script>
+</body>
+</html>
+```
+
+## Exercice afficher et mettre en majuscule
+
+Dans un autre fichier `exercice-afficher.html`
+
+1. Affichez le texte dans la page suivante.
+2. Mettre ce texte dans la console en majuscule (`toUpperCase`)
+3. Essayez de l'afficher dans la page
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Web</title>
+</head>
+<body>
+    <div id="root">
+        <h1 class="titre">hello world</h1>
+    </div>
+    <script>
+     
     </script>
 </body>
 </html>
