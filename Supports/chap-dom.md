@@ -32,6 +32,14 @@ JavaScript propose plusieurs méthodes pour cibler un élément spécifique :
 document.body; // Accède à l'élément <body> du document
 document.getElementById('root'); // Récupère l'élément qui a l'ID "root"
 document.querySelector('.main'); // Sélectionne le premier élément correspondant au sélecteur CSS
+
+// récupère en retirant les espace le contenu du div#root
+document.getElementById('root').innerHTML.trim()
+
+// récupère le premier élément (html) trouver dans la liste ul.li 
+document.querySelector('ul>li').innerHTML
+
+document.querySelector('.main').innerText.toUpperCase()
 ```
 
 ## **Sélectionner plusieurs éléments**  
@@ -48,6 +56,36 @@ elements.forEach(item => {
 
 // Convertir la liste en un tableau standard
 const elementsArray = Array.from(elements);
+```
+
+Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récupéré les valeurs avec les fonctions du DOM, pensez à `caster` ces valeurs en `parseFloat` ou `parseInt` pour faire des calculs numérique.
+
+### Exercice
+
+1. Affichez les valeurs numérique dans le `ul.li`
+2. Faites la somme des valeurs numériques.
+   
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Web</title>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <li>100</li>
+            <li>250</li>
+            <li>500</li>
+        </ul>
+    </div>
+    <script>
+        console.log(document)
+    </script>
+</body>
+</html>
 ```
 
 ## **Obtenir des informations sur un élément**  
