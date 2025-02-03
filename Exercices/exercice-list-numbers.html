@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Listes nombres</h1>
+    <ul class="numbers">
+        <li>A=<span>1</span></li>
+        <li>B=<span>2</span></li>
+        <li>C=<span>3</span></li>
+    </ul>
+    <script>
+        const els = document.querySelectorAll('ul>li');
+        const spans = document.querySelectorAll('ul>li>span');
+        console.log(spans)
+        els[0].innerHTML = 'A=<span>' + spans[2].innerText + '</span>';
+        els[1].innerHTML = 'B=<span>' + spans[0].innerText + '</span>';
+        els[2].innerHTML = 'C=<span>' + spans[1].innerText + '</span>';
+
+        els[0].innerHTML = 'A=<span>3</span>';
+        els[1].innerHTML = 'B=<span>2</span>';
+        els[2].innerHTML = 'C=<span>1</span>';
+
+        els[0].querySelector('span').innerText = 3;
+        els[1].querySelector('span').innerText = 2;
+        els[2].querySelector('span').innerText = 1;
+
+
+        // TODO on explique demain
+        let a = 1;
+        let b = 2;
+        let c = 3;
+        let tmp1 = a;
+        [a, b, c] = [c, a, b];
+    </script>
+</body>
+
+</html>
