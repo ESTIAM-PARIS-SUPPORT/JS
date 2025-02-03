@@ -86,8 +86,6 @@ Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récu
         // 1. affichez les valeurs
         // dans querySelector ou querySelectorAll utilisez les classes ou les selecteurs CSS
         const els = document.querySelectorAll('ul>li')
-
-        els.fore
     </script>
 </body>
 </html>
