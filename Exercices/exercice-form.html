@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="message"></div>
+    <form id="form">
+        <input type="text" id="username" placeholder="Entrez votre nom">
+        <input type="submit" value="Soumettre">
+    </form>
+    <div class="users"></div>
+    <script>
+        const form = document.getElementById('form');
+        const message = document.querySelector('.message');
+        const userList = document.querySelector('.users');
+     
+        // on initialise la liste des utilisateurs 
+        const users = [];
+
+        // faire une fonction qui vérifie que le username n'est pas dans le tableau quelque soit la casse
+        /*
+
+        */
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            message.innerText = '';
+            const username = document.getElementById('username').value.trim();
+            // error firts on teste d'abord si il y a une erreur on sort de la fonction anonyme du submit
+            if(username == ''){
+                message.innerText = "Attention le champ est vide";
+
+                return; // sort de la fonction le script s'arrete ici 
+            }
+
+            // on teste si username est dans le tableau users si username est présent on sort de la fonction anonyme du submit 
+            if( users.includes(username) == true ){
+                message.innerText = "ce nom existe déjà dans la liste";
+
+                return ;
+            }
+           
+            
+            users.push(username);
+            
+            document.getElementById('username').value = '';
+
+            userList.innerHTML = '';
+            users.forEach( function(user){
+                const li = document.createElement('li');
+                li.innerText = user ;
+                userList.appendChild(li);
+            });
+
+        })
+    </script>
+</body>
+
+</html>
