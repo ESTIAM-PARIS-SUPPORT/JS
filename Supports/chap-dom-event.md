@@ -41,7 +41,7 @@ Il est possible de créer de nouveaux éléments et de les ajouter dynamiquement
 
 ### 01 Exercice 
 
-Créez un bouton dans la page pour ajouter des éléments dans la page HTML.
+Créez un bouton `add` dans la page pour ajouter un paragraphe dans le div#root princpal de la page.
 
 ### 02 Exercice
 
