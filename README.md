@@ -4,6 +4,7 @@
 
 1. DOM [DOM](./Supports/chap-dom.md)
    1. Exercices [exercices DOM](./Exercices/exercices-dom.md)
+2. DOM event [dom event](./Supports/chap-dom-event.md)
 
 
 ## Introduction langage JS
