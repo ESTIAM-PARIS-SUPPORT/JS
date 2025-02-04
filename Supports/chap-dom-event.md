@@ -17,6 +17,57 @@ Le DOM permet également d'interagir avec les utilisateurs grâce aux événemen
 </script>
 ```
 
+### **Création et gestion de nouveaux éléments dans le DOM**
+
+Il est possible de créer de nouveaux éléments et de les ajouter dynamiquement dans la structure de la page. Cela peut être très utile pour des fonctionnalités comme la gestion de listes d'éléments.
+
+#### Exemple : Ajouter des éléments de manière dynamique
+
+```html
+<ul id="list"></ul>
+<button id="addButton">Ajouter un élément</button>
+
+<script>
+  const list = document.getElementById('list');
+  const addButton = document.getElementById('addButton');
+
+  addButton.addEventListener('click', function() {
+    const newItem = document.createElement('li');
+    newItem.innerText = 'Nouvel élément';
+    list.appendChild(newItem); // Ajouter le nouvel élément à la liste
+  });
+</script>
+```
+
+### 01 Exercice 
+
+Créez un bouton dans la page pour ajouter des éléments dans la page HTML.
+
+### 02 Exercice
+
+Bien comprendre avant ce qu'est une fonction.
+
+1. Voici une liste de valeurs dans un tableau, affichez ces éléments dans une liste `ul.li`
+   ```js
+    let numbers = [1,2,3,4,5];
+   ```
+2. Créez un bouton `shuffle`  permettant de mélanger ces valeurs.
+   Utilisez cette fonction pour mélanger ces valeurs dans votre script.
+   ```js
+   function shuffle(num){
+    num.sort(_ => Math.random() - .5 );
+
+    return num;
+   }
+   ```
+   Pour supprimer des éléments vous pouvez utiliser la méthode suivante
+
+   ```js
+   // supprime tous les lis
+   const ul = document.querySelector('#root > ul');
+   ul.innerHTML = ''
+   ```
+
 ### **Événements de formulaire**
 
 Vous pouvez aussi interagir avec des formulaires et récupérer ou valider les données saisies par l'utilisateur. Les formulaires HTML sont une partie importante du DOM.
@@ -45,77 +96,9 @@ Vous pouvez aussi interagir avec des formulaires et récupérer ou valider les d
 </script>
 ```
 
-### **Manipulation de styles dynamiques avec le DOM**
+### Exercice 
 
-Vous pouvez modifier les styles CSS d'un élément de manière dynamique via JavaScript. Cela vous permet d'ajouter des effets visuels ou de changer l'apparence d'éléments en fonction des interactions de l'utilisateur.
-
-#### Exemple : Changer la couleur de fond au survol
-
-```html
-<div id="box" style="width: 100px; height: 100px; background-color: lightblue;">
-  Survolez-moi !
-</div>
-
-<script>
-  const box = document.getElementById('box');
-
-  // Ajouter un événement de survol
-  box.addEventListener('mouseover', function() {
-    box.style.backgroundColor = 'orange'; // Change la couleur de fond
-  });
-
-  // Rétablir la couleur initiale après le survol
-  box.addEventListener('mouseout', function() {
-    box.style.backgroundColor = 'lightblue';
-  });
-</script>
-```
-
-### **Création et gestion de nouveaux éléments dans le DOM**
-
-Il est possible de créer de nouveaux éléments et de les ajouter dynamiquement dans la structure de la page. Cela peut être très utile pour des fonctionnalités comme la gestion de listes d'éléments.
-
-#### Exemple : Ajouter des éléments de manière dynamique
-
-```html
-<ul id="list"></ul>
-<button id="addButton">Ajouter un élément</button>
-
-<script>
-  const list = document.getElementById('list');
-  const addButton = document.getElementById('addButton');
-
-  addButton.addEventListener('click', function() {
-    const newItem = document.createElement('li');
-    newItem.innerText = 'Nouvel élément';
-    list.appendChild(newItem); // Ajouter le nouvel élément à la liste
-  });
-</script>
-```
-
-### **Utilisation du DOM pour la gestion des animations**
-
-En JavaScript, vous pouvez également utiliser le DOM pour créer des animations. Cela peut être fait en modifiant progressivement les propriétés CSS des éléments, par exemple la position, la taille ou la transparence.
-
-#### Exemple : Animer un élément
-
-```html
-<div id="box" style="width: 100px; height: 100px; background-color: red; position: relative;">
-  Déplacez-moi !
-</div>
-
-<script>
-  const box = document.getElementById('box');
-
-  let position = 0;
-
-  // Déplacer l'élément sur un intervalle de temps
-  setInterval(function() {
-    position += 5;
-    box.style.left = position + 'px'; // Déplace l'élément vers la droite
-  }, 20); // La position change toutes les 20ms
-</script>
-```
+1. Créez un formulaire pour ajouter des noms, puis affichez ces noms dans une liste `ul.li`
 
 ### **Le DOM et les performances**
 
@@ -147,3 +130,4 @@ Lorsque vous travaillez avec de nombreux éléments ou effectuez des manipulatio
   });
 </script>
 ```
+
