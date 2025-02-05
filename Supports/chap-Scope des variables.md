@@ -166,7 +166,7 @@ console.log(valeur); // Affiche "globale"
 
 *Vous pouvez faire cet exercice à deux.*
 
-1. Créez, dans un fichier `index.html`, l'algorithme qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
+1. Créez, dans un fichier `index.html`, l'algorithme (vous pouvez l'écrire dans un fichier JS à part) qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
 
 2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant du produit est de `87.35` et que l'on donne `150`, l'algorithme doit vous rendre la monnaie suivante :
 
@@ -192,25 +192,23 @@ monnaie [150]
 
 Voici une liste de prix de produits possibles :
 
-  1.  150 = 100 + 50
-	2.	75 = 50 + 10 + 10 + 5
-	3.	35.5 = 10 + 10 + 10 + 5 + 0.5
-	4.	20.2 = 10 + 10 + 0.2
-	5.	12.75 = 10 + 2 + 0.5 + 0.2 + 0.05
-	6.	8.3 = 5 + 2 + 1 + 0.2 + 0.1
-	7.	5.55 = 5 + 0.5 + 0.05
-	8.	3.14 = 2 + 1 + 0.1 + 0.02 + 0.02
-	9.	2.99 = 2 + 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.02
-	10.	1.75 = 1 + 0.5 + 0.2 + 0.05
-	11.	0.98 = 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.01
-	12.	0.75 = 0.5 + 0.2 + 0.05
-	13.	0.55 = 0.5 + 0.05
-	14.	0.33 = 0.2 + 0.1 + 0.02 + 0.01
-	15.	0.27 = 0.2 + 0.05 + 0.02
-	16.	0.12 = 0.1 + 0.02
-	17.	0.08 = 0.05 + 0.02 + 0.01
-	18.	0.05 = 0.05
-	19.	0.03 = 0.02 + 0.01
-
-
+1. 150 = 100 + 50
+2. 75 = 50 + 10 + 10 + 5
+3. 35.5 = 10 + 10 + 10 + 5 + 0.5
+4. 20.2 = 10 + 10 + 0.2
+5. 12.75 = 10 + 2 + 0.5 + 0.2 + 0.05
+6. 8.3 = 5 + 2 + 1 + 0.2 + 0.1
+7. 5.55 = 5 + 0.5 + 0.05
+8. 3.14 = 2 + 1 + 0.1 + 0.02 + 0.02
+9. 2.99 = 2 + 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.02
+10. 1.75 = 1 + 0.5 + 0.2 + 0.05
+11. 0.98 = 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.01
+12. 0.75 = 0.5 + 0.2 + 0.05
+13. 0.55 = 0.5 + 0.05
+14. 0.33 = 0.2 + 0.1 + 0.02 + 0.01
+15. 0.27 = 0.2 + 0.05 + 0.02
+16. 0.12 = 0.1 + 0.02
+17. 0.08 = 0.05 + 0.02 + 0.01
+18. 0.05 = 0.05
+19. 0.03 = 0.02 + 0.01
 
