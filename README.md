@@ -13,6 +13,7 @@
 2. Scope [Scope](./Supports/chap-Scope%20des%20variables.md)
 3. Types - Objets [type](./Supports/chap-Types.md)
 4. Array [array](./Supports/chap-Arrays.md)
+5. Prototype [prototype](./Supports/chap-Prototype.md)
 
 ## Notions avancées
 
