@@ -14,13 +14,13 @@ Les tableaux sont l'une des structures de données les plus couramment utilisée
   - [4. **Limitations de la copie superficielle**](#4-limitations-de-la-copie-superficielle)
   - [5. **Copie profonde**](#5-copie-profonde)
   - [6. **Method chaining**](#6-method-chaining)
-  - [🟢 **1. La méthode `fill()`**](#-1-la-méthode-fill)
+  - [🟢 **7. La méthode `fill()`**](#-1-la-méthode-fill)
     - [🔹 **Syntaxe :**](#-syntaxe-)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation-)
-  - [🟡 **2. La méthode `some()`**](#-2-la-méthode-some)
+  - [🟡 **8. La méthode `some()`**](#-2-la-méthode-some)
     - [🔹 **Syntaxe :**](#-syntaxe--1)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--1)
-  - [🔴 **3. La méthode `every()`**](#-3-la-méthode-every)
+  - [🔴 **9. La méthode `every()`**](#-3-la-méthode-every)
     - [🔹 **Syntaxe :**](#-syntaxe--2)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--2)
   - [🔥 **Comparaison `some()` vs `every()`**](#-comparaison-some-vs-every)
@@ -201,7 +201,7 @@ Nous allons voir comment elles fonctionnent avec des exemples pratiques. 🚀
 
 ---
 
-## 🟢 **1. La méthode `fill()`**
+## 🟢 **7. La méthode `fill()`**
 La méthode `fill()` modifie un tableau existant en remplissant tous (ou une partie) de ses éléments avec une valeur donnée.
 
 ### 🔹 **Syntaxe :**
@@ -231,7 +231,7 @@ console.log(arr); // [0, 9, 9, 9, 0]
 
 ---
 
-## 🟡 **2. La méthode `some()`**
+## 🟡 **8. La méthode `some()`**
 `some()` permet de tester si **au moins un élément** d'un tableau satisfait une condition. Elle retourne un **booléen** (`true` ou `false`).
 
 ### 🔹 **Syntaxe :**
@@ -259,7 +259,7 @@ console.log(hasBigNumber); // false
 
 ---
 
-## 🔴 **3. La méthode `every()`**
+## 🔴 **9. La méthode `every()`**
 `every()` permet de tester si **tous** les éléments du tableau respectent une condition. Elle retourne un **booléen**.
 
 ### 🔹 **Syntaxe :**
