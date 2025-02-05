@@ -23,9 +23,6 @@
         const users = [];
 
         // faire une fonction qui vérifie que le username n'est pas dans le tableau quelque soit la casse
-        /*
-
-        */
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
@@ -38,8 +35,17 @@
                 return; // sort de la fonction le script s'arrete ici 
             }
 
+            // cette méthode d'un array .some doit retourner true ou false selon qu'elle trouve ce que l'on cherche dans le tableau
+            // vous devez écrire une fonction (anonyme par exemple) pour tester chaque valeur du tableau
+            const isExistUsername = users.some(function(user){ 
+                // console.log('dans le test', user)
+                return username.toLowerCase() == user.toLowerCase();
+            })
+
+            //console.log(isExistUsername)
+
             // on teste si username est dans le tableau users si username est présent on sort de la fonction anonyme du submit 
-            if( users.includes(username) == true ){
+            if( isExistUsername ){
                 message.innerText = "ce nom existe déjà dans la liste";
 
                 return ;
