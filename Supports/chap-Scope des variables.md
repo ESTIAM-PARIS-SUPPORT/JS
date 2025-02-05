@@ -166,11 +166,19 @@ console.log(valeur); // Affiche "globale"
 
 *Vous pouvez faire cet exercice à deux.*
 
+## Partie 1
+
+Dans cette partie de l'exercice on ne prendra que des prix entiers.
+
 1. Créez, dans un fichier `index.html`, l'algorithme (vous pouvez l'écrire dans un fichier JS à part) qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
 
 2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant du produit est de `87.35` et que l'on donne `150`, l'algorithme doit vous rendre la monnaie suivante :
 
 La machine possède les jetons : 100, 50, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01
+
+## Partie 2 (facultative ) 
+
+Dans cette partie vous essayez de gérer les nombres avec une partie décimale.
 
 Monnaie à rendre: 62.65 €
 ```txt
