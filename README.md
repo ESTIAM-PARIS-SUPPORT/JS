@@ -13,7 +13,9 @@
 2. Scope [Scope](./Supports/chap-Scope%20des%20variables.md)
 3. Types - Objets [type](./Supports/chap-Types.md)
 4. Array [array](./Supports/chap-Arrays.md)
-5. Prototype [prototype](./Supports/chap-Prototype.md)
+5. Set [set](./Supports/chap-set.md)
+6. Court Circuit [court circuit](./Supports/chap-courtcircuit.md)
+7. Prototype [prototype](./Supports/chap-Prototype.md)
 
 ## Notions avancées
 
