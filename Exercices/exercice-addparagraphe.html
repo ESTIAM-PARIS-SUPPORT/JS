@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add paragraphe</title>
+</head>
+<body>
+    <button id="btn">Add paragraphe</button>
+    <div id="root"></div>
+ <script>
+    const root = document.getElementById('root');
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function(){
+        const p = document.createElement('p');
+        root.innerHTML = "";
+        p.innerText = "Bonjour je suis un paragraphe " + Math.floor( Math.random() * 10 );
+        root.appendChild(p)
+    });
+ </script>
+</body>
+</html>

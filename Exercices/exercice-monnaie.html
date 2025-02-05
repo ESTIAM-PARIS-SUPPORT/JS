@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendre la monnaie</title>
+</head>
+
+<body>
+    <script>
+        const tokens = [100, 50, 10, 5, 2, 1];
+        const price = 176;
+        const amount = 350;
+        let res = amount - price;
+        let i = 0;
+        let change = []
+        while (res > 0) {
+            while (res - tokens[i] >= 0) {
+                res = res - tokens[i];
+                change.push(tokens[i]);
+            }
+            i++;
+        }
+
+        console.log(change);
+
+        // une autre manière 
+        res = amount - price;
+        i = 0;
+        change = [];
+        for (let i = 0; i < tokens.length; i++) {
+            let q = Math.floor(res / tokens[i]);
+            if (q > 0) {
+                res = res - q * tokens[i];
+
+                change.push({ q, token: tokens[i] });
+            }
+
+        }
+        console.log(change);
+
+        // 
+
+    </script>
+</body>
+
+</html>

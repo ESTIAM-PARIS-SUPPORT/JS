@@ -52,7 +52,10 @@
         let a = 1;
         let b = 2;
         let c = 3;
-        let tmp1 = a;
+        let tmp = a;
+        a = b ;
+        b = c ;
+        c = tmp;
         [a, b, c] = [c, a, b];
     </script>
 </body>
