@@ -162,11 +162,7 @@ console.log(valeur); // Affiche "globale"
    - Limitez la portée des variables au strict nécessaire.
 
 
-## 1. Exercice : Les Closures
-
-Créez une fonction qui retourne une autre fonction. La fonction retournée doit accéder à une variable `count` du scope de la fonction parente, même après que la fonction parente ait été exécutée. Observez le comportement en exécutant la fonction enfant. 
-
-## 2. Exercice (+2pts)
+##  Challenge (+2pts)
 
 *Vous pouvez faire cet exercice à deux.*
 
@@ -177,9 +173,11 @@ Créez une fonction qui retourne une autre fonction. La fonction retournée doit
 Affichez dans le DOM
 
 Monnaie à rendre: 62.65 €
+```txt
 1 x 2 €
 1 x 10 €
 1 x 50 €
 1 x 0.5 €
 1 x 0.1 €
 1 x 0.05 €
+```
