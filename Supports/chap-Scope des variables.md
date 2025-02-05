@@ -66,6 +66,10 @@ monCompteur(); // Affiche 1
 monCompteur(); // Affiche 2
 ```
 
+## Exercice 
+
+Créez un compteur basé sur le même principe que la fonction définit ci-dessus, mais cette fois le compteur s'incrémente à chaque appel de 3.
+
 ---
 
 ### 3. Le scope de bloc (introduit avec `let` et `const`)
