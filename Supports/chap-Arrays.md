@@ -6,12 +6,26 @@ Les tableaux sont l'une des structures de données les plus couramment utilisée
 
 ### Table des matières
 
-- [Référence vs Copie](#1-référence-vs-copie)
-- [Affectation par référence](#2-affectation-par-référence)
-- [Copier un tableau](#3-copier-un-tableau)
-- [Limitations de la copie superficielle](#4-limitations-de-la-copie-superficielle)
-- [Copie profonde](#5-copie-profonde)
-- [Method chaining](#6-method-chaining)
+- [Référence des tableaux](#référence-des-tableaux)
+    - [Table des matières](#table-des-matières)
+  - [1. **Référence vs Copie**](#1-référence-vs-copie)
+  - [2. **Affectation par référence**](#2-affectation-par-référence)
+  - [3. **Copier un tableau**](#3-copier-un-tableau)
+  - [4. **Limitations de la copie superficielle**](#4-limitations-de-la-copie-superficielle)
+  - [5. **Copie profonde**](#5-copie-profonde)
+  - [6. **Method chaining**](#6-method-chaining)
+  - [🟢 **1. La méthode `fill()`**](#-1-la-méthode-fill)
+    - [🔹 **Syntaxe :**](#-syntaxe-)
+    - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation-)
+  - [🟡 **2. La méthode `some()`**](#-2-la-méthode-some)
+    - [🔹 **Syntaxe :**](#-syntaxe--1)
+    - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--1)
+  - [🔴 **3. La méthode `every()`**](#-3-la-méthode-every)
+    - [🔹 **Syntaxe :**](#-syntaxe--2)
+    - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--2)
+  - [🔥 **Comparaison `some()` vs `every()`**](#-comparaison-some-vs-every)
+    - [📌 **Exemple comparatif :**](#-exemple-comparatif-)
+  - [✨ **Résumé et Cas d'Utilisation**](#-résumé-et-cas-dutilisation)
 
 
 ## 1. **Référence vs Copie**
@@ -24,6 +38,8 @@ Lorsque nous parlons de variables et d'objets en programmation, nous devons comp
 Les tableaux, comme les objets, sont stockés en mémoire comme des références. Cela a d'importantes implications sur la manière dont ils sont manipulés.
 
 ---
+
+![hof](./images/hof.png)
 
 ## 2. **Affectation par référence**
 
@@ -175,3 +191,129 @@ const result = str
 
 console.log(result);  // "olleH"
 ```
+
+
+- **`fill()`** : Remplit un tableau avec une valeur spécifique.
+- **`some()`** : Vérifie si **au moins un élément** d'un tableau satisfait une condition.
+- **`every()`** : Vérifie si **tous les éléments** d'un tableau satisfont une condition.
+
+Nous allons voir comment elles fonctionnent avec des exemples pratiques. 🚀
+
+---
+
+## 🟢 **1. La méthode `fill()`**
+La méthode `fill()` modifie un tableau existant en remplissant tous (ou une partie) de ses éléments avec une valeur donnée.
+
+### 🔹 **Syntaxe :**
+```js
+array.fill(value, start, end);
+```
+- **`value`** : La valeur à insérer.
+- **`start`** *(optionnel)* : L'index de début (inclus).
+- **`end`** *(optionnel)* : L'index de fin (exclus).
+
+### 📌 **Exemple d'utilisation :**
+```js
+let arr = [1, 2, 3, 4, 5];
+
+// Remplit tout le tableau avec 0
+arr.fill(0);
+console.log(arr); // [0, 0, 0, 0, 0]
+
+// Remplit les éléments d'index 1 à 3 avec 9
+arr.fill(9, 1, 4);
+console.log(arr); // [0, 9, 9, 9, 0]
+```
+
+📝 **Remarque :**  
+- Si **`start`** et **`end`** ne sont pas précisés, tous les éléments seront remplacés.
+- `fill()` **modifie directement** le tableau original.
+
+---
+
+## 🟡 **2. La méthode `some()`**
+`some()` permet de tester si **au moins un élément** d'un tableau satisfait une condition. Elle retourne un **booléen** (`true` ou `false`).
+
+### 🔹 **Syntaxe :**
+```js
+array.some(callback);
+```
+- **`callback`** : Une fonction qui prend chaque élément et retourne `true` si la condition est remplie.
+
+### 📌 **Exemple d'utilisation :**
+```js
+let numbers = [3, 7, 9, 2, 6];
+
+// Vérifie si au moins un nombre est pair
+let hasEven = numbers.some(num => num % 2 === 0);
+console.log(hasEven); // true (car 2 et 6 sont pairs)
+
+// Vérifie si au moins un nombre est supérieur à 10
+let hasBigNumber = numbers.some(num => num > 10);
+console.log(hasBigNumber); // false
+```
+
+📝 **Remarque :**  
+- `some()` **s'arrête dès qu'il trouve un élément qui satisfait la condition**.
+- Si aucun élément ne répond à la condition, `some()` retourne `false`.
+
+---
+
+## 🔴 **3. La méthode `every()`**
+`every()` permet de tester si **tous** les éléments du tableau respectent une condition. Elle retourne un **booléen**.
+
+### 🔹 **Syntaxe :**
+```js
+array.every(callback);
+```
+- **`callback`** : Une fonction qui teste chaque élément et retourne `true` ou `false`.
+
+### 📌 **Exemple d'utilisation :**
+```js
+let ages = [18, 22, 30, 25];
+
+// Vérifie si tous les âges sont supérieurs ou égaux à 18
+let allAdults = ages.every(age => age >= 18);
+console.log(allAdults); // true
+
+// Vérifie si tous les âges sont inférieurs à 30
+let allYoung = ages.every(age => age < 30);
+console.log(allYoung); // false (car 30 n'est pas < 30)
+```
+
+📝 **Remarque :**  
+- `every()` **s'arrête dès qu'il trouve un élément qui ne respecte pas la condition**.
+- Si tous les éléments respectent la condition, `every()` retourne `true`, sinon `false`.
+
+---
+
+## 🔥 **Comparaison `some()` vs `every()`**
+| Méthode  | Vérifie si…  | Retourne `true` si… |
+|----------|-------------|--------------------|
+| `some()` | Au moins un élément respecte la condition | Un élément au moins valide la condition |
+| `every()` | Tous les éléments respectent la condition | Tous les éléments valident la condition |
+
+### 📌 **Exemple comparatif :**
+```js
+let values = [10, 20, 30, 40];
+
+// `some()`: Vérifie s'il y a un nombre > 35
+console.log(values.some(num => num > 35)); // true (car 40 est > 35)
+
+// `every()`: Vérifie si tous les nombres sont > 5
+console.log(values.every(num => num > 5)); // true (tous sont > 5)
+```
+
+---
+
+## ✨ **Résumé et Cas d'Utilisation**
+| Méthode  | Utilisation typique |
+|----------|--------------------|
+| `fill()` | Remplir un tableau avec une valeur donnée |
+| `some()` | Vérifier si **au moins un élément** respecte une condition |
+| `every()` | Vérifier si **tous les éléments** respectent une condition |
+
+🎯 **Exemples d'applications :**
+- **`fill()`** : Réinitialiser un tableau (`arr.fill(0)`)
+- **`some()`** : Vérifier si une liste contient un élément spécifique (`arr.some(el => el === 'admin')`)
+- **`every()`** : Vérifier si tous les éléments respectent une règle (`arr.every(num => num > 0)`)

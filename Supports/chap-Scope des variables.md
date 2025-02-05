@@ -168,7 +168,13 @@ Créez une fonction qui retourne une autre fonction. La fonction retournée doit
 
 1. Créez, dans un fichier, l'algorithme qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
 
-2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant est de produit est de `87.35` et que l'on donne `150`.
+2. Créez un formulaire permettant de rendre la monnaie, créez deux champs un pour saisir le montant du produit et un autre pour donner l'argent.
+
+```txt
+montant du prix du produit[87.35] 
+payer : [150]
+[Monnaie]
+```
 
 Affichez dans le DOM
 
