@@ -66,6 +66,10 @@ monCompteur(); // Affiche 1
 monCompteur(); // Affiche 2
 ```
 
+## Exercice Scope
+
+Créez un compteur basé sur le même principe que la fonction définit ci-dessus, mais cette fois le compteur s'incrémente à chaque appel de 3.
+
 ---
 
 ### 3. Le scope de bloc (introduit avec `let` et `const`)
@@ -145,10 +149,10 @@ console.log(valeur); // Affiche "globale"
 1. **Utilisez `let` et `const` :** 
    - Préférez `const` pour les variables immuables.
    - Utilisez `let` si une réassignation est nécessaire.
-   - Évitez `var` dans du code moderne.
+   - Évitez complétement `var` 
 
 2. **Minimisez les variables globales :**
-   - Utilisez des fonctions ou des modules pour encapsuler vos variables.
+   - Utilisez des fonctions ou structures ou des objets pour encapsuler vos variables.
    - Cela réduit les risques de conflits et facilite la maintenance.
 
 3. **Déclarez les variables le plus proche possible de leur utilisation :**
@@ -158,15 +162,11 @@ console.log(valeur); // Affiche "globale"
    - Limitez la portée des variables au strict nécessaire.
 
 
-## 1. Exercice : Les Closures
-
-Créez une fonction qui retourne une autre fonction. La fonction retournée doit accéder à une variable `count` du scope de la fonction parente, même après que la fonction parente ait été exécutée. Observez le comportement en exécutant la fonction enfant. 
-
-## 2. Exercice (+2pts)
+##  Challenge (+2pts)
 
 *Vous pouvez faire cet exercice à deux.*
 
-1. Créez, dans un fichier, l'algorithme qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
+## Partie 1
 
 2. Créez un formulaire permettant de rendre la monnaie, créez deux champs un pour saisir le montant du produit et un autre pour donner l'argent.
 
@@ -176,12 +176,53 @@ payer : [150]
 [Monnaie]
 ```
 
-Affichez dans le DOM
+1. Créez, dans un fichier `index.html`, l'algorithme (vous pouvez l'écrire dans un fichier JS à part) qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
+
+2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant du produit est de `87.35` et que l'on donne `150`, l'algorithme doit vous rendre la monnaie suivante :
+
+La machine possède les jetons : 100, 50, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01
+
+## Partie 2 (facultative ) 
+
+Dans cette partie vous essayez de gérer les nombres avec une partie décimale.
 
 Monnaie à rendre: 62.65 €
-1 x 2 €
-1 x 10 €
+```txt
 1 x 50 €
+1 x 10 €
+1 x 2 €
 1 x 0.5 €
 1 x 0.1 €
 1 x 0.05 €
+```
+
+Remarques/indications pour l'affichage dans la page 
+
+```txt
+montant du produit [87.35]
+monnaie [150]
+[calculer]
+```
+
+Voici une liste de prix de produits possibles :
+
+1. 150 = 100 + 50
+2. 75 = 50 + 10 + 10 + 5
+3. 35.5 = 10 + 10 + 10 + 5 + 0.5
+4. 20.2 = 10 + 10 + 0.2
+5. 12.75 = 10 + 2 + 0.5 + 0.2 + 0.05
+6. 8.3 = 5 + 2 + 1 + 0.2 + 0.1
+7. 5.55 = 5 + 0.5 + 0.05
+8. 3.14 = 2 + 1 + 0.1 + 0.02 + 0.02
+9. 2.99 = 2 + 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.02
+10. 1.75 = 1 + 0.5 + 0.2 + 0.05
+11. 0.98 = 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.01
+12. 0.75 = 0.5 + 0.2 + 0.05
+13. 0.55 = 0.5 + 0.05
+14. 0.33 = 0.2 + 0.1 + 0.02 + 0.01
+15. 0.27 = 0.2 + 0.05 + 0.02
+16. 0.12 = 0.1 + 0.02
+17. 0.08 = 0.05 + 0.02 + 0.01
+18. 0.05 = 0.05
+19. 0.03 = 0.02 + 0.01
+
