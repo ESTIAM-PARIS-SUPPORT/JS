@@ -14,18 +14,24 @@ Les tableaux sont l'une des structures de données les plus couramment utilisée
   - [4. **Limitations de la copie superficielle**](#4-limitations-de-la-copie-superficielle)
   - [5. **Copie profonde**](#5-copie-profonde)
   - [6. **Method chaining**](#6-method-chaining)
-  - [🟢 **7. La méthode `fill()`**](#-1-la-méthode-fill)
+  - [🟢 **7. La méthode `fill()`**](#-7-la-méthode-fill)
     - [🔹 **Syntaxe :**](#-syntaxe-)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation-)
-  - [🟡 **8. La méthode `some()`**](#-2-la-méthode-some)
+  - [🟡 **8. La méthode `some()`**](#-8-la-méthode-some)
     - [🔹 **Syntaxe :**](#-syntaxe--1)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--1)
-  - [🔴 **9. La méthode `every()`**](#-3-la-méthode-every)
+  - [🔴 **9. La méthode `every()`**](#-9-la-méthode-every)
     - [🔹 **Syntaxe :**](#-syntaxe--2)
     - [📌 **Exemple d'utilisation :**](#-exemple-dutilisation--2)
   - [🔥 **Comparaison `some()` vs `every()`**](#-comparaison-some-vs-every)
     - [📌 **Exemple comparatif :**](#-exemple-comparatif-)
   - [✨ **Résumé et Cas d'Utilisation**](#-résumé-et-cas-dutilisation)
+    - [Exercices](#exercices)
+    - [Fonctions d'ordre supérieur (HOF)](#fonctions-dordre-supérieur-hof)
+      - [Exercice : Création d'une HOF personnalisée](#exercice--création-dune-hof-personnalisée)
+      - [Exercice : Filtration conditionnelle avec `filter`](#exercice--filtration-conditionnelle-avec-filter)
+      - [Exercice : Créez une fonction permettant de trouver un élément dans un tableau](#exercice--créez-une-fonction-permettant-de-trouver-un-élément-dans-un-tableau)
+      - [Exercice : Créez une fonction qui fait la somme de nombres](#exercice--créez-une-fonction-qui-fait-la-somme-de-nombres)
 
 
 ## 1. **Référence vs Copie**
@@ -317,3 +323,33 @@ console.log(values.every(num => num > 5)); // true (tous sont > 5)
 - **`fill()`** : Réinitialiser un tableau (`arr.fill(0)`)
 - **`some()`** : Vérifier si une liste contient un élément spécifique (`arr.some(el => el === 'admin')`)
 - **`every()`** : Vérifier si tous les éléments respectent une règle (`arr.every(num => num > 0)`)
+
+### Exercices
+
+### Fonctions d'ordre supérieur (HOF)
+
+Les fonctions d'ordre supérieur (Higher-Order Functions, HOF) sont un concept central de la programmation fonctionnelle. Ces fonctions permettent de créer des codes plus lisibles, modulables et expressifs.
+
+**Qu'est-ce qu'une fonction d'ordre supérieur ?**
+
+Une fonction d'ordre supérieur est une fonction qui :
+
+- Accepte une ou plusieurs fonctions comme arguments.
+- Renvoie une fonction comme résultat.
+
+Les HOF sont possibles dans des langages où les fonctions peuvent être affectées à des variables, passées en tant qu'arguments, et renvoyées depuis d'autres fonctions.
+
+#### Exercice : Création d'une HOF personnalisée
+1. Définissez une fonction d'ordre supérieur `repeatAction` qui prend un nombre `n` et une fonction `action` comme paramètres. Cette fonction doit exécuter `action` `n` fois. Utilisez cette fonction pour imprimer "Hello!" cinq fois.
+
+#### Exercice : Filtration conditionnelle avec `filter`
+1. Écrivez une fonction qui utilise `filter` pour retourner uniquement les nombres pairs d'un tableau donné. Testez cette fonction avec le tableau `[1, 2, 3, 4, 5, 6]`.
+
+#### Exercice : Créez une fonction permettant de trouver un élément dans un tableau
+1. Écrivez une fonction qui chercher un élément dans un tableau
+2. Ecrivez une fonction qui cherche une séquence [1,2,3] par exemple dans un tableau de valeurs
+
+#### Exercice : Créez une fonction qui fait la somme de nombres
+
+1. Créez une fonction qui fait la somme de valeurs dans un tableau.
+2. Utilisez la méthode `reduce` pour faire cette somme.
