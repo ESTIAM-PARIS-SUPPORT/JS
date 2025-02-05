@@ -18,7 +18,6 @@
 
 5. Fonctions, approfondissement [function](./Supports/chap-Fonctions-02.md)
 6. tdz [tdz](./Supports/chap-TDZ.md)
-7. HOF [hof](./Supports/chap-HOF.md)
 
 ## Revenir sur le DOM et la boucle d'événement
 
