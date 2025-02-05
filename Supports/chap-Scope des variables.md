@@ -166,18 +166,26 @@ console.log(valeur); // Affiche "globale"
 
 *Vous pouvez faire cet exercice à deux.*
 
-1. Créez, dans un fichier, l'algorithme qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
+1. Créez, dans un fichier `index.html`, l'algorithme qui rend la monnaie à un client en utilisant les billets et pièces disponibles. L'algorithme doit calculer la monnaie à rendre et afficher le nombre de billets et pièces nécessaires.
 
-2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant est de produit est de `87.35` et que l'on donne `150`.
+2. Créez un formulaire permettant de rendre la monnaie, par exemple si le montant du produit est de `87.35` et que l'on donne `150`, l'algorithme doit vous rendre la monnaie suivante :
 
-Affichez dans le DOM
+La machine possède les jetons : 100, 50, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01
 
 Monnaie à rendre: 62.65 €
 ```txt
-1 x 2 €
-1 x 10 €
 1 x 50 €
+1 x 10 €
+1 x 2 €
 1 x 0.5 €
 1 x 0.1 €
 1 x 0.05 €
+```
+
+Remarque pour l'affichage dans la page 
+
+```txt
+montant du produit [87.35]
+monnaie [150]
+[calculer]
 ```
