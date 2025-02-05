@@ -149,10 +149,10 @@ console.log(valeur); // Affiche "globale"
 1. **Utilisez `let` et `const` :** 
    - Préférez `const` pour les variables immuables.
    - Utilisez `let` si une réassignation est nécessaire.
-   - Évitez `var` dans du code moderne.
+   - Évitez complétement `var` 
 
 2. **Minimisez les variables globales :**
-   - Utilisez des fonctions ou des modules pour encapsuler vos variables.
+   - Utilisez des fonctions ou structures ou des objets pour encapsuler vos variables.
    - Cela réduit les risques de conflits et facilite la maintenance.
 
 3. **Déclarez les variables le plus proche possible de leur utilisation :**
