@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="main">
+            <p>Cliquez ici</p>
+        </div>
+    </div>
+
+    <script>
+        function init() {
+            let root = document.querySelector('#root');
+            let main = document.querySelector('.main');
+
+            // Modification du contenu de monElement
+            if (root) {
+                console.log( root.textContent )
+            }
+
+            // Ajout d'un écouteur d'événements pour le clic
+            if (main) {
+                main.addEventListener('click', function () {
+                    alert('Hello World ');
+                });
+            }
+        }
+
+        // Attendre que le DOM soit complètement chargé
+        document.addEventListener('DOMContentLoaded', function () {
+            init(); // Appel de la fonction d'initialisation du DOM
+        });
+    </script>
+</body>
+
+</html>

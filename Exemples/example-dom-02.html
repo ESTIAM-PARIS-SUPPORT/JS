@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .p-main{
+            color:pink;
+        }
+        .m-main{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main center">
+        <h1>Manipulation du DOM</h1>
+        <p><img class="main-image" src="./github.png" alt="Github" width="100" ></p>
+        <p class="p-main m-main">lorem 1</p>
+        <p class="p-main">lorem 2</p>
+        <p >lorem 3</p>
+    </div>
+   
+    <script>
+        const elImage = document.querySelector('.main-image');
+        console.log(elImage.getAttribute('src'))
+        console.log(elImage.getAttribute('alt'))
+        console.log(elImage.getAttribute('width'))
+
+        const elMain =document.querySelector('.main')
+        elMain.style.color = 'green';
+
+        const elPMain = document.querySelector('.p-main')
+        elPMain.style.color = 'red';
+
+        console.log(elPMain.classList)
+
+        console.log(elMain.children)
+
+        const p = document.createElement('p')
+
+    </script>
+</body>
+</html>
