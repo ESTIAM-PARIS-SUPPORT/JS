@@ -84,7 +84,11 @@ Si vous voulez éviter de modifier le tableau original en manipulant sa référe
   ```js
   const newArray = originalArray.slice();
   ```
-  Ici, `slice()` sans arguments renvoie une copie du tableau entier. Si vous passez des arguments, par exemple `slice(1)`, cela renverra une copie du tableau à partir de l'index 1. Par exemple, `slice(1, 3)` renverra une copie du tableau de l'index 1 à l'index 3.
+  Ici, `slice()` sans arguments renvoie une copie du tableau entier. Si vous passez des arguments, par exemple `slice(1)`, cela renverra une copie du tableau à partir de l'index 1. Par exemple, `slice(1, 3)` renverra une copie du tableau de l'index 1 à l'index 2 .
+
+>[!IMPORTANT]
+slice ne prend pas la borne sup )
+>
   ```js
     const originalArray = [1, 2, 3, 4, 5];
     const newArray = originalArray.slice(1, 3);
