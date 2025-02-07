@@ -72,5 +72,5 @@ const Bernard = {
 
 ```
 
-1. Utilisez ces objets pour et calculez la moyenne de chaque personne.
-2. Recodez cet exercice avec une fonction Constructeur et re-créez les personnes en faisant la moyenne.
+1. Utilisez ces objets et calculez la moyenne de chaque personne.
+2. Recodez cet exercice avec une fonction Constructeur et re-créez les personnes en re-calculant leur moyenne. 
