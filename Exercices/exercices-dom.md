@@ -57,6 +57,42 @@ for(let i = 0; i < 3; i++){
 myArray.length;
 ```
 
+Corrections
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+</head>
+
+<body>
+    <h1>Listes nombres</h1>
+    <ul class="numbers">
+        <li>A=<span>1</span></li>
+        <li>B=<span>2</span></li>
+        <li>C=<span>3</span></li>
+    </ul>
+    <script>
+     // afficher les valeurs
+     const lis = document.querySelectorAll('.numbers > li');
+     console.log(lis);
+     // permuter les valeurs
+     //lis[0].innerHTTML = A=<span>3</span>;
+     //lis[1].innerHTTML = B=<span>1</span>;
+     //lis[2].innerHTTML = C=<span>2</span>;
+     // deuxième solution
+     lis[0].querySelector('span').innerHTML = 3;
+     lis[1].querySelector('span').innerHTML = 2;
+     lis[2].querySelector('span').innerHTML = 1;
+    </script>
+</body>
+</html>
+```
+
 ---
 
 ## Exercice 02 : Créer des éléments
@@ -96,6 +132,54 @@ H = 8
 
 ---
 
+Correction
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Listes nombres</h1>
+    <ul id="numbers">
+    </ul>
+    <script>
+        let container = document.getElementById('numbers');
+        let letters = "ABCDEFGH";
+
+        for (let i = 0; i < letters.length; i++) {
+            let li = document.createElement('li');
+            li.innerHTML = letters[i] + '=' + (i+1) ;
+            container.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>
+```
+
 ## Exercice 03 : Nombre de caractères (écouter un événement)
 
 Récupérez le dossier **number_char_start** dans les [sources](./number_char_start.html).
@@ -128,4 +212,90 @@ elInput.addEventListener('input', eventInput);
 4. L'utilisateur peut saisir des particules et introduire des espaces, ce qui fausse le calcul du nombre de particules. Trouvez une solution pour nettoyer la chaîne saisie afin de compter correctement le nombre de particules.
 
 **Remarques pour cette dernière question** : On peut envisager un nettoyage plus approfondi, mais cela reste une question ouverte. Il nous manque certaines notions. Vous pourriez par exemple vérifier que chaque caractère de chaque particule est bien un caractère alphabétique…
+
+Correction
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: palevioletred;
+            padding: 3px;
+        }
+
+        .warning {
+            color: purple;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nombre de caractères</h1>
+    <p>Formulaire de saisie</p>
+    <div class="form">
+        <label for="phrase">Votre phrase : </label>
+        <input type="text" id="phrase" class="phrase">
+        <input type="submit" value="Calculer" class="submitPhrase">
+    </div>
+    <div>
+        <p class="message"></p>
+        <p class="result"></p>
+        <p class="numberWord"></p>
+    </div>
+    <script>
+        let elInput = document.querySelector('.phrase');
+        let elSubmit = document.querySelector('.submitPhrase');
+        let message = document.querySelector('.message');
+        let numberWord = document.querySelector('.numberWord');
+
+        // 1.
+        let value = '';
+
+        function eventInput(event) {
+            value = event.target.value;
+            document.querySelector('.result').innerHTML = value.length;
+        }
+
+        elInput.addEventListener('input', eventInput);
+
+        // 2.
+        function onClick(event) {
+            if (value.trim() === '') {
+                message.innerHTML = '<span class="warning">Attention votre champ est vide</span>';
+            }
+
+            value = value.trim();
+            value = value.split(' ');
+            let sanitize = [];
+            for (let i = 0; i < value.length; i++) {
+                let word = value[i].trim();
+                if (word != '' ) sanitize.push(word);
+            }
+
+            numberWord.innerHTML = "Nombres de particules : " + sanitize.length;
+        }
+
+        elSubmit.addEventListener('click', onClick);
+    </script>
+</body>
+</html>
+```
 
