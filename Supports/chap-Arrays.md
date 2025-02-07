@@ -346,14 +346,88 @@ Les HOF sont possibles dans des langages où les fonctions peuvent être affect�
 #### Exercice : Création d'une HOF personnalisée
 1. Définissez une fonction d'ordre supérieur `repeatAction` qui prend un nombre `n` et une fonction `action` comme paramètres. Cette fonction doit exécuter `action` `n` fois. Utilisez cette fonction pour imprimer "Hello!" cinq fois.
 
+```js
+function repeatAction(n, action) {
+    for (let i = 0; i < n; i++) {
+        console.log('---')
+        action();
+    }
+}
+
+function action(){
+    console.log('Hello!');
+}
+
+function bad(){
+    console.log('Bad!');
+}
+
+repeatAction(5, action);
+repeatAction(2, bad);
+
+```
+
 #### Exercice : Filtration conditionnelle avec `filter`
 1. Écrivez une fonction qui utilise `filter` pour retourner uniquement les nombres pairs d'un tableau donné. Testez cette fonction avec le tableau `[1, 2, 3, 4, 5, 6]`.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+// paramtère m est un paramètre par défaut 
+function filterArrayPair(num {
+    return numbers.filter(function (number) {
+        return number % 2 == 0
+    })
+}
+```
 
 #### Exercice : Créez une fonction permettant de trouver un élément dans un tableau
 1. Écrivez une fonction qui chercher un élément dans un tableau
 2. Ecrivez une fonction qui cherche une séquence [1,2,3] par exemple dans un tableau de valeurs
 
+```js
+// Définition de deux tableaux : 
+// - `t` est le tableau dans lequel on recherche une séquence.
+// - `s` est la séquence que l'on cherche à identifier dans `t`.
+const t = [3, 2, 1, 2, 3, 5, 6]; 
+const s = [1, 2, 3, 5]; 
+
+// Fonction qui cherche si `s` est une sous-séquence de `t`
+// et retourne l'index du premier élément correspondant.
+function search_el(s, t) {
+    // Parcours du tableau `t` avec une limite pour éviter un dépassement d'index.
+    // On s'arrête à `t.length - s.length` pour s'assurer que `s` peut tenir dans `t` à partir de `i`.
+    for (let i = 0; i <= t.length - s.length; i++) {
+        let count = 0; // Compteur de correspondances
+
+        // Vérification de la sous-séquence en comparant chaque élément de `s` avec `t` à partir de l'index `i`
+        for (let j = 0; j < s.length; j++) {
+            // Vérifie si l'élément de `s` correspond à l'élément de `t` à la position décalée de `i`
+            if (s[j] == t[j + i]) {
+                count++; // Incrémente si les éléments correspondent
+            }
+        }
+
+        // Si tous les éléments de `s` ont été trouvés dans `t` de manière consécutive, on retourne l'index de départ.
+        if (count == s.length) return i;
+    }
+}
+
+// Affichage du résultat dans la console, ce qui montre à quelle position `s` commence dans `t`.
+console.log(search_el(s, t)); 
+```
+
 #### Exercice : Créez une fonction qui fait la somme de nombres
 
 1. Créez une fonction qui fait la somme de valeurs dans un tableau.
-2. Utilisez la méthode `reduce` pour faire cette somme.
+
+```js
+
+function sumNumbers(numbers){
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum = numbers[i];
+    }
+    return sum;
+}
+```
+
