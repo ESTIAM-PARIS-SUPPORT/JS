@@ -29,6 +29,10 @@ const person1 = new Person("John", 30);
 const person2 = new Person("Alice", 25);
 ```
 
+## Exercice 
+
+Créez une fonction constructeur `Student` qui possède deux attributs name et age et un attribut interne qui permet de savoir si un objet de type `Student` est adulte.
+
 La fonction `Person` agit comme un modèle pour créer des objets `Person`. Les objets créés auront des propriétés `name` et `age` avec les valeurs spécifiées.
 
 ## Effet de bord
