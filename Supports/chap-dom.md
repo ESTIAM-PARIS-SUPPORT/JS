@@ -37,7 +37,7 @@ document.querySelector('.main'); // Sélectionne le premier élément correspond
 document.getElementById('root').innerHTML.trim()
 
 // récupère le premier élément (html) trouver dans la liste ul.li 
-document.querySelector('ul>li').innerHTML
+document.querySelector('ul>li').innerHTML;
 
 document.querySelector('.main').innerText.toUpperCase()
 ```
@@ -60,7 +60,7 @@ const elementsArray = Array.from(elements);
 
 Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récupéré les valeurs avec les fonctions du DOM, pensez à `caster` ces valeurs en `parseFloat` ou `parseInt` pour faire des calculs numérique.
 
-### Exercice
+### Exercice - corrigé
 
 1. Affichez les valeurs numérique dans le `ul.li`
 2. Faites la somme des valeurs numériques.
@@ -76,16 +76,22 @@ Remarque: si vous avez une somme de valeurs à faire dans le DOM, une fois récu
 <body>
     <div id="root">
         <ul>
-            <li>100</li>
-            <li>250</li>
-            <li>500</li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
+        <div id="total"></div>
     </div>
     <script>
         //console.log(document)
         // 1. affichez les valeurs
         // dans querySelector ou querySelectorAll utilisez les classes ou les selecteurs CSS
         const els = document.querySelectorAll('ul>li')
+        els[0].innerText = 100;
+        els[1].innerText = 250;
+        els[2].innerText = 500;
+        const total = document.getElementById('total');
+        total.innerText = 100 + 250 + 500;
     </script>
 </body>
 </html>
@@ -112,7 +118,12 @@ Dans un autre fichier `exercice-afficher.html`
         <h1 class="titre">hello world</h1>
     </div>
     <script>
-     
+      // on utilise la classe avec querySelector
+      const el = document.querySelector('.titre');
+      console.log(el.innerHTML);
+      console.log(el.innerHTML.toUpperCase())
+      // mettre en majuscule si vous mettez des balises HTML alors elles seront interprétées
+      el.innerHTML = '<h1>' + el.innerHTML.toUpperCase() + '</h1>'
     </script>
 </body>
 </html>
@@ -170,9 +181,32 @@ parent.insertBefore(nouveauElement, referenceElement); // Ajoute un élément av
 parent.insertAdjacentHTML('beforebegin', '<p>Texte avant</p>'); // Insère du HTML à une position spécifique
 ```
 
-## Exercice
+## Exercice - corrigé
 
 Créez une page HTML avec un `div.main` et ajoutez un paragraphe avec du texte en rose (définissez ce style avec du JavaScript).
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coulteur</title>
+</head>
+<body>
+<div class="main"></div>
+
+<script>
+    const div = document.querySelector('.main');
+    div.style.color = 'pink';
+    div.innerHTML = '<p>Bonjour tout le monde</p>';
+    
+</script>
+</body>
+</html>
+
+```
+
 
 ---
 
