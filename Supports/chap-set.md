@@ -77,25 +77,5 @@ console.log([...uniqueValues]);     // [1, 2, 3, 4]
             mySet.size; // 2
         ```
 
-## 3. Exercices
-
-### Exercice Map
-
-Ecrivez une fonction pour chacune des questions suivantes :
-
-1. Créez un `Map` vide `User`.
-2. Ajoutez les paires clé-valeur suivantes à `User` :
-    - 'name' : 'Gregoire'
-    - 'age' : 25
-    - 'city' : 'Paris'
-3. Affichez la valeur associée à la clé 'name'.
-4. Affichez la taille de `User`.
-5. Supprimez la clé 'age' de `User`.
-6. Affichez la taille de `User` après la suppression.
-7. Vérifiez si la clé 'city' existe dans `User` et affichez le résultat de cette vérification
-8. Affichez toutes les clés de `User` en utilisant une boucle
-9. Affichez toutes les valeurs de `User` en utilisant une boucle
-10. Utilisez une boucle pour afficher à la fois les clés et les valeurs de `User`.
-
 ### Exercice Set
 Soit la chaine de caractères `mississippi` comptez le nombre de chacune des lettres.
