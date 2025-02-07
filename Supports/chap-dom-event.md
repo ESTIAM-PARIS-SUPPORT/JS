@@ -102,8 +102,8 @@ Bien comprendre avant ce qu'est une fonction.
     <title>Add paragraphe</title>
 </head>
 <body>
-    <button id="shuffle">Shuffle</button>
-    <div id="root"></div>
+    <button id="btn">Shuffle</button>
+    <div id="root"><ul></ul></div>
  <script>
   const rootUl = document.querySelector('#root > ul');
   const btn = document.getElementById('btn');
