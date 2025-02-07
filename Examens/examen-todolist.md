@@ -1,10 +1,12 @@
 ### TP : **Créer une Todo List en JavaScript pur**
 
-Vous devez rendre dans la partie devoir vos fichiers.
-Vous devez proposer également un graphisme cohérent géré en CSS. 
-Utilisez ce que nous avons vu en cours.
+### Contraintes
 
-#### Objectif du TP :
+Vous devez rendre dans la partie devoir vos fichiers.
+Vous devez proposer également un graphisme cohérent géré en CSS (voir la proposition ci-après).
+Utilisez les notions que nous avons vu en cours.
+
+#### Fonctionnalités :
 Créer une application **Todo List** en utilisant uniquement **JavaScript**. L'application devra permettre :
 
 - D'afficher la liste des tâches.
@@ -17,6 +19,10 @@ Créer une application **Todo List** en utilisant uniquement **JavaScript**. L'a
 Toutes les données seront gérées directement dans le fichier `app.js`.
 
 ---
+
+### Piste graphique 
+
+![todolist](./todo-list.png)
 
 ### Partie 1 : **Initialisation du projet**
 
