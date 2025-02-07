@@ -79,3 +79,16 @@ console.log([...uniqueValues]);     // [1, 2, 3, 4]
 
 ### Exercice Set
 Soit la chaine de caractères `mississippi` comptez le nombre de chacune des lettres.
+```js
+const phrase = "mississippi";
+const letters = new Set(phrase); // les lettres qu'une fois
+for (const letter of letters) {
+    let count = 0;
+    for (let i = 0; i < phrase.length; i++) {
+        if (phrase[i] == letter) {
+            count++;
+        }
+    }
+    console.log(letter, count);
+}
+```
