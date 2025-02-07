@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        const Alan = {
+            name: "Alan",
+            age: 25,
+            getIsAdult() {
+                return (this.age >= 18);
+            },
+            notes: [10, 18, 18, 20]
+        }
+
+        const Sophie = {
+            name: "Sophie",
+            age: 25,
+            getIsAdult() {
+                return (this.age >= 18);
+            },
+            notes: [11, 17, 18, 20]
+        }
+
+        const Bernard = {
+            name: "Bernad",
+            age: 20,
+            getIsAdult() {
+                return (this.age >= 18);
+            },
+            notes: [11, 10, 18, 20]
+        }
+
+        function average(notes) {
+            let s = 0;
+            for (let i = 0; i < notes.length; i++) {
+                s = notes[i] + s;
+            }
+
+            return Math.round((s / notes.length) * 10) / 10;
+        }
+
+        console.log(average(Alan.notes));
+
+        function Student(name, age, notes) {
+            this.name = name;
+            this.age = age;
+            this.notes = notes;
+            this.average = function () {
+                let s = 0;
+                for (let i = 0; i < this.notes.length; i++) {
+                    s = this.notes[i] + s;
+                }
+
+                return Math.round((s / this.notes.length) * 10) / 10;
+            }
+        }
+
+        const s = new Student('Alan', 20, [19, 10, 17, 18]);
+        console.log(s.average());
+        
+    </script>
+</body>
+
+</html>

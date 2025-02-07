@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Définissez une fonction d'ordre supérieur `repeatAction` qui prend un nombre `n` et une fonction `action` comme paramètres. Cette fonction doit exécuter `action` `n` fois. Utilisez cette fonction pour imprimer "Hello!" cinq fois.
+         */
+
+        // function action() {
+        //     console.log("X");
+        // }
+
+        // function bad() {
+        //     console.log("-");
+        // }
+
+        // function repeatAction(n, a) {
+        //     for (let i = 0; i < n; i++) {
+        //         console.log('---')
+        //         a();
+        //     }
+        // }
+
+        // repeatAction(5, action);
+        // repeatAction(2, bad);
+
+        /**
+         * Exercice : Filtration conditionnelle avec filter
+Écrivez une fonction qui utilise filter pour retourner uniquement les nombres pairs d'un tableau donné. Testez cette fonction avec le tableau [1, 2, 3, 4, 5, 6].
+         */
+
+        // const numbers = [1, 2, 3, 4, 5, 6];
+
+        // // paramtère m est un paramètre par défaut 
+        // function filterArray(num, m = 2) {
+
+        //     return numbers.filter(function (number) {
+        //         return number % m == 0
+        //     })
+        // }
+
+        // console.log(filterArray(numbers));
+
+        // function filterArrayV2(num, m = 2) {
+        //     const res = [];
+        //     for (let i = 0; i < num.length; i++) {
+        //         if (num[i] % m == 0)
+        //             res.push(num[i]);
+        //     }   
+
+        //     return res;
+        // }
+
+        // console.log(filterArrayV2(numbers, 3));
+
+        // // crée une fonction qui cherche un élément dans un tableau 
+        // function search_val(occ, numbers){
+        //     for (let i = 0; i < numbers.length; i++) {
+        //         if(numbers[i] == occ) return i ;
+        //     }
+
+        //     return false;
+        // }
+        // console.log('------');
+        // console.log(numbers);
+        // console.log( search_val(2, numbers) ) ;
+
+        const t = [3, 2, 1, 2, 3, 5, 6];
+        const s = [1, 2, 3, 5];
+
+        function search_el(s, t) {
+            for (let i = 0; i <= t.length - s.length; i++) {
+                let count = 0 ;
+                for (let j = 0; j < s.length; j++) {
+                    //console.log(j, i + j);
+                    //console.log(s[j] == t[j + i]);
+                    if(s[j] == t[j + i]){
+                        count++; // si le nombre de fois que l'on a trouvé un élément = à la longueur de la chaine recherchée on a trouvé la séquence.
+                    }
+                }
+
+                if(count == s.length) return i ;
+
+                // console.log('----');
+            }
+        }
+
+        console.log( search_el(s, t) ) ;
+
+    </script>
+</body>
+
+</html>

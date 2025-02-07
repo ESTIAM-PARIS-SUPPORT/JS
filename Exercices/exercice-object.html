@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // fonction constructeur 
+        function Student(name, age){
+            this.name = name; // this c'est l'objet que l'on va créer plus tard 
+            this.age = age;
+            // une méthode dans fonction Constructeur 
+            this.isAdult = function(){
+                if(this.age >= 18) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+
+        const s1 = new Student("Alan", 20);
+        console.log(s1.isAdult() ? "Yes" : "No" );
+        const s2 = new Student("Sophie", 17);
+        console.log(s2.isAdult() ? "Yes" : "No" );
+
+        console.log(s1);
+
+        // on peut créer des objets rapidement en JS en utilisant des accolades
+
+        const o = {
+            name : "Alan",
+            age : 25,
+            //info : this.age, // ne marche pas this n'a pas de contexte directe
+            getIsAdult(){
+                // le this ici sera défini à l'appel de la fonction 
+                console.log(this.age)
+                return (this.age >= 18);
+            }
+        }
+
+        console.log(o.info);
+        console.log(o.getIsAdult());
+
+    </script>
+</body>
+</html>
