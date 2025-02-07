@@ -5,7 +5,6 @@
 - [Introduction aux Objets](#introduction-aux-objets)
 - [Propriétés et méthodes](#propriétés-et-méthodes)
 - [Fonction constructeur](#fonction-constructeur)
-- [Effet de bord](#effet-de-bord)
 - [Introduction à la notion de prototype](#introduction-à-la-notion-de-prototype)
 - [Exercice Prototype Average](#exercice-prototype-average)
 - [`Object.create()` & `Object.setPrototypeOf()`](#objectcreate--objectsetprototype)
@@ -36,31 +35,6 @@ La fonction `Person` agit comme un modèle pour créer des objets `Person`. Les 
 ## Exercice 
 
 Créez une fonction constructeur `Student` qui possède deux attributs name et age et un attribut interne qui permet de savoir si un objet de type `Student` est adulte.
-
-
-## Effet de bord
-
-Lorsque vous utilisez une fonction constructeur et que vous affectez des propriétés à `this`, il est important de faire attention à l'effet de bord. Le mot-clé `this` peut être imprévisible dans certaines situations. Considérez l'exemple suivant :
-
-```js
-function Counter() {
-  this.value = 0;
-
-  setInterval(function() {
-    // Attention à l'effet de bord sur this
-    this.value++;
-    console.log(this.value);
-  }, 1000);
-}
-
-const counter = new Counter();
-```
-
-Ici, le `this` à l'intérieur de la fonction de rappel `setInterval` ne fait pas référence à l'objet `Counter`, entraînant un comportement indésirable. Pour éviter cela, on peut utiliser `bind` ou une fonction fléchée.
-
-## Introduction à la notion de prototype
-
-Les prototypes en JavaScript sont un mécanisme fondamental qui permet d'ajouter des propriétés et des méthodes à des objets. Ils jouent un rôle central dans le système d'héritage de JavaScript, permettant à un objet d'hériter des propriétés et méthodes d'un autre. Cela est possible grâce à la chaîne de prototypes, une série de liens entre les objets qui permet de remonter de proche en proche jusqu'à trouver la propriété ou la méthode recherchée.
 
 ### Fonctionnement des prototypes
 
@@ -195,10 +169,7 @@ Dans cet exemple, `afficherInfos` est appelée avec `this` défini sur l'objet `
 
 ### Conclusion
 
-`Function.prototype.call()` offre une manière puissante et flexible de manipuler le contexte `this` lors de l'appel de fonctions, ce qui permet de réutiliser des fonctions et des méthodes de manière efficace et expressive en JavaScript.
-
----
-
+`Function.prototype.call()` offre une manière puissante et flexible de manipuler le contexte `this` lors de l'appel de fonctions, ce qui permet de réutiliser des fonctions et des méthodes de manière efficace et expressive en J
 ## Exercice Classes vs Prototype
 
 ### Partie 1: Classes en JavaScript
