@@ -15,3 +15,4 @@ const bad = numbers.map(function (number) {
 });
 
 console.log(bad);
+

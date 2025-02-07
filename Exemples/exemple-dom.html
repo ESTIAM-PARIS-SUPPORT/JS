@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="main">
+            <h1>Hello World</h1>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+        </div>
+        <article class="principal">
+            <img id="image" src="./github.png" alt="github" class="git img-class p-3">
+            <p class="content">a</p>
+            <p class="content">b <span>B</span></p>
+            <p class="content">c</p>
+        </article>
+    </div>
+    <script>
+        console.log(document.body);
+        console.log(document.body);
+        console.log(document.getElementById('root'));
+        console.log(document.querySelector('.main'));
+        const elements = document.querySelectorAll('.content');
+
+        // Parcourir la liste des éléments sélectionnés
+        elements.forEach(item => {
+            console.log(item); // Affiche chaque élément dans la console
+        });
+
+        // Convertir la liste en un tableau standard
+        const elementsArray = Array.from(elements);
+        console.log(elementsArray)
+        const image = document.getElementById('image');
+        console.log(image.getAttribute('src'))
+
+        console.log(image.classList)
+
+        console.log(document.querySelector('.content').innerHTML)
+        console.log(document.querySelector('.content').innerText)
+
+       // document.querySelectorAll('.content')[1].innerText = "Ceci est un texte modifié.";
+    </script>
+</body>
+
+</html>

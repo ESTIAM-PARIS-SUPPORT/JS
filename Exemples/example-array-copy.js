@@ -27,3 +27,4 @@ let m = [8, 9]
 let r = [1, 2, ...m, 9, 10];
 
 console.log(r);
+
