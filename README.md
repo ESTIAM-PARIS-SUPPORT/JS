@@ -17,15 +17,6 @@
 6. Court Circuit [court circuit](./Supports/chap-courtcircuit.md)
 7. Prototype [prototype](./Supports/chap-Prototype.md)
 
-## Notions avancées
-
-5. Fonctions, approfondissement [function](./Supports/chap-Fonctions-02.md)
-6. tdz [tdz](./Supports/chap-TDZ.md)
-
-## Revenir sur le DOM et la boucle d'événement
-
-1. Boucle d'événement [event loop](./Supports/chap-eventloop.md)
-
 ## Installation de dépendances  
 
 1. Configuration [configuration](./Supports/chap-installation-configuration.md)
