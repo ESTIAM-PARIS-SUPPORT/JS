@@ -43,6 +43,32 @@ Il est possible de créer de nouveaux éléments et de les ajouter dynamiquement
 
 Créez un bouton `add` dans la page pour ajouter un paragraphe dans le div#root princpal de la page.
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add paragraphe</title>
+</head>
+<body>
+    <button id="btn">Add paragraphe</button>
+    <div id="root"></div>
+ <script>
+    const root = document.getElementById('root');
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function(){
+        const p = document.createElement('p');
+        root.innerHTML = "";
+        p.innerText = "Bonjour je suis un paragraphe " + Math.floor( Math.random() * 10 );
+        root.appendChild(p)
+    });
+ </script>
+</body>
+</html>
+```
+
 ### 02 Exercice
 
 Bien comprendre avant ce qu'est une fonction.
@@ -67,6 +93,52 @@ Bien comprendre avant ce qu'est une fonction.
    const ul = document.querySelector('#root > ul');
    ul.innerHTML = ''
    ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add paragraphe</title>
+</head>
+<body>
+    <button id="btn">Shuffle</button>
+    <div id="root"><ul></ul></div>
+ <script>
+  const rootUl = document.querySelector('#root > ul');
+  const btn = document.getElementById('btn');
+  const fragment = document.createDocumentFragment(); // optimisé
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  
+  // initialisation (voir la fonction plus bas)
+  createList(numbers);
+
+   // mélange des valeurs d'un tableau numérique
+  function shuffle(num) {
+      num.sort(_ => Math.random() - .5);
+  
+      return num;
+  }
+  function createList(numbers){
+      numbers.forEach(function (number) {
+          const li = document.createElement("li");
+          li.textContent = number;
+          fragment.appendChild(li); // touche pas au DOM
+      });
+      
+      rootUl.appendChild(fragment);
+  }
+  
+  // event
+  btn.addEventListener('click', function () {
+      rootUl.innerHTML = "";
+      shuffle(numbers); // on mélange les nombres
+      createList(numbers); // on recrée les éléments
+  });
+   </script>
+  </body>
+</html>
+```
 
 ### **Événements de formulaire**
 

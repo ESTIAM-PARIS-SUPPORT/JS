@@ -66,9 +66,24 @@ monCompteur(); // Affiche 1
 monCompteur(); // Affiche 2
 ```
 
-## Exercice Scope
+## Exercice Scope - correction
 
 Créez un compteur basé sur le même principe que la fonction définit ci-dessus, mais cette fois le compteur s'incrémente à chaque appel de 3.
+
+```js
+function creerCompteur() {
+  let compteur = 0; // Scope local à la fonction
+  return function () {
+    compteur=compteur + 3;
+    console.log(compteur);
+  };
+}
+
+const monCompteur = creerCompteur();
+monCompteur(); // Affiche 3
+monCompteur(); // Affiche 6
+monCompteur(); // Affiche 9
+```
 
 ---
 
@@ -204,25 +219,61 @@ monnaie [150]
 [calculer]
 ```
 
-Voici une liste de prix de produits possibles :
+```js
+const tokens = [100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.01];
+let price = 176.25;
+let amount = 350.88;
 
-1. 150 = 100 + 50
-2. 75 = 50 + 10 + 10 + 5
-3. 35.5 = 10 + 10 + 10 + 5 + 0.5
-4. 20.2 = 10 + 10 + 0.2
-5. 12.75 = 10 + 2 + 0.5 + 0.2 + 0.05
-6. 8.3 = 5 + 2 + 1 + 0.2 + 0.1
-7. 5.55 = 5 + 0.5 + 0.05
-8. 3.14 = 2 + 1 + 0.1 + 0.02 + 0.02
-9. 2.99 = 2 + 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.02
-10. 1.75 = 1 + 0.5 + 0.2 + 0.05
-11. 0.98 = 0.5 + 0.2 + 0.2 + 0.05 + 0.02 + 0.01
-12. 0.75 = 0.5 + 0.2 + 0.05
-13. 0.55 = 0.5 + 0.05
-14. 0.33 = 0.2 + 0.1 + 0.02 + 0.01
-15. 0.27 = 0.2 + 0.05 + 0.02
-16. 0.12 = 0.1 + 0.02
-17. 0.08 = 0.05 + 0.02 + 0.01
-18. 0.05 = 0.05
-19. 0.03 = 0.02 + 0.01
+function change(price, amount) {
+    // Tableau pour stocker la monnaie à rendre
+    const change = [];
+    
+    // Résoudre le problème des arrondis en JavaScript en multipliant par 100
+    // Puis arrondir la différence en centimes pour éviter les problèmes de flottants
+    let res = Math.round((amount - price) * 100); // Conversion en centimes
+    
+    // Variable d'index pour itérer à travers les tokens (billets/pièces)
+    let i = 0;
 
+    // Boucle principale : tant que la somme restante (res) est supérieure à 0
+    // et qu'il reste des tokens à utiliser, on continue à calculer la monnaie
+    while (res > 0 && i < tokens.length) {
+        
+        // Boucle interne pour soustraire autant de fois que possible le token actuel de la somme
+        // L'idée est de retirer le token le plus grand possible sans dépasser la somme à rendre
+        while ((res - tokens[i] * 100) >= 0) {
+            // Ajouter le token dans le tableau "change" pour marquer qu'il a été donné comme monnaie
+            change.push(tokens[i]);
+            
+            // Décrémenter la somme à rendre (res) de la valeur du token utilisé
+            res = res - tokens[i] * 100;
+        }
+
+        // Incrémenter l'index i pour passer au token suivant dans le tableau tokens
+        i++;
+    }
+
+    // Retourner le tableau des tokens (monnaie rendue)
+    return change;
+}
+
+
+console.log(change(price, amount), (amount - price).toFixed(2));
+
+// une autre approche plus optimisée
+
+// function changeOp(price, amount) {
+//     const change = [];
+//     let res = amount - price;
+//     for (let i = 0; i < tokens.length; i++) {
+//         if (Math.floor(res / tokens[i]) > 0) {
+//             let q = Math.floor(res / tokens[i]);
+//             res = res - q * tokens[i];
+
+//             change.push({ q: q, token: tokens[i] });
+//         }
+//     }
+
+//     return change;
+// }
+```
